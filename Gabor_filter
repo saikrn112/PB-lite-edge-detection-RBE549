@@ -1,0 +1,5 @@
+******* Gabor filter ********
+
+* These are based on the human visual system
+* Gaussian kernel function modulated by a sinusodial plane wave
+

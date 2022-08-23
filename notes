@@ -1,0 +1,54 @@
+********* Phase I ***********
+Implement simplified probablity of boundary -- Actual paper is in the same folder
+Examine - brightness, color and texture information across multiple scales(different size of objects/images)
+Output -- per pixel probablity of boundary
+Image Size - L x M
+
+1st Step
+--------
+* run through 3 different filters, denoted below (Filter Banks)
+* Create a texton map which depicts texture in the image
+    by clustering filter responses, denoted below (Texton Map)
+* texton map : Filter responses -> texture
+* Image L x M
+
+2nd Step
+--------
+* capture brightness changes by creating brightness map
+* cluster brightness values using K-means clustering in grayscale
+* chosen number of clusters -- 16 works well
+* Image L x M
+
+3rd Step
+--------
+* capture color changes (chrominance content) by creating color map
+* 3 values per pixel for RGB color channels
+* can experiment with other channels like YCbCr, HSV or Lab
+* K-means with 16 clusters works well
+* cluster RGB together or individual color channels ? 
+* Image L x M
+
+4th Step
+--------
+* get Texture, Brightness and Color gradients
+* compute difference of (what) values across different shapes and sizes?? 
+* half disc masks for the win 8 scales and 3 orientations - 24 types 2 sides - 48
+* for brightness image, 
+    run all 48 half disc masks
+    ======= didnt understand =======
+
+Filter Banks ----------------
+** Oriented DoG filter -- notes in DoG_filter
+** Leung-Malik Filters -- notes in LM_filter
+** Gabor Filters -- notes in Gabor_filter
+
+Texton Map ----------------
+* above filters will give lot of output images
+* let's say N filters -- N filter reponses @ each pixel
+* if image is L x M -- N dimensional vector of L x M images
+* N dimensional pixel vector is encoding texture properties
+* simplify N-dimensionals pixel vector by K-means clustering (textons) -- 64 works well
+* now each pixel is represented by a discrete cluster ID 
+    instead of an N dimensional,real valued filter responses
+* this process of reducing N dimensions to 1 dimension is called 
+    "Vector Quantization"

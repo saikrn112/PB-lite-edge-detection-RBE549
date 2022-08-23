@@ -1,0 +1,36 @@
+[I 23:47:11.004 NotebookApp] [nb_conda_kernels] enabled, 1 kernels found
+[I 23:47:11.788 NotebookApp] Serving notebooks from local directory: /Users/bhagyasyam/Personal/WPI/semester_1/computer_vision/HW0
+[I 23:47:11.788 NotebookApp] Jupyter Notebook 6.4.12 is running at:
+[I 23:47:11.788 NotebookApp] http://localhost:8888/?token=d81c108e9a8c4da3567592c0d9bcd6ef086662ce265d8764
+[I 23:47:11.788 NotebookApp]  or http://127.0.0.1:8888/?token=d81c108e9a8c4da3567592c0d9bcd6ef086662ce265d8764
+[I 23:47:11.788 NotebookApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+[C 23:47:11.795 NotebookApp] 
+    
+    To access the notebook, open this file in a browser:
+        file:///Users/bhagyasyam/Library/Jupyter/runtime/nbserver-39374-open.html
+    Or copy and paste one of these URLs:
+        http://localhost:8888/?token=d81c108e9a8c4da3567592c0d9bcd6ef086662ce265d8764
+     or http://127.0.0.1:8888/?token=d81c108e9a8c4da3567592c0d9bcd6ef086662ce265d8764
+[W 23:48:18.985 NotebookApp] Notebook Untitled.ipynb is not trusted
+[W 23:48:19.018 NotebookApp] 404 GET /nbextensions/widgets/notebook/js/extension.js?v=20220816234711 (::1) 23.220000ms referer=http://localhost:8888/notebooks/Untitled.ipynb
+[I 23:48:19.246 NotebookApp] Kernel started: 0a21ff39-6a27-47bc-9c49-459f26984540, name: conda-env-CV-py
+[I 23:50:19.127 NotebookApp] Saving file at /CV_test.ipynb
+[W 23:50:19.128 NotebookApp] Notebook CV_test.ipynb is not trusted
+[I 23:52:19.277 NotebookApp] Saving file at /CV_test.ipynb
+[W 23:52:19.279 NotebookApp] Notebook CV_test.ipynb is not trusted
+[I 23:54:19.148 NotebookApp] Saving file at /CV_test.ipynb
+[W 23:54:19.150 NotebookApp] Notebook CV_test.ipynb is not trusted
+[I 23:56:19.160 NotebookApp] Saving file at /CV_test.ipynb
+[W 23:56:19.162 NotebookApp] Notebook CV_test.ipynb is not trusted
+Fontconfig warning: ignoring UTF-8: not a valid region tag
+[I 23:58:19.287 NotebookApp] Saving file at /CV_test.ipynb
+[W 23:58:19.287 NotebookApp] Notebook CV_test.ipynb is not trusted
+[I 00:00:19.157 NotebookApp] Saving file at /CV_test.ipynb
+[W 00:00:19.158 NotebookApp] Notebook CV_test.ipynb is not trusted
+[I 00:02:19.164 NotebookApp] Saving file at /CV_test.ipynb
+[W 00:02:19.165 NotebookApp] Notebook CV_test.ipynb is not trusted
+[I 01:18:12.657 NotebookApp] Saving file at /CV_test.ipynb
+[W 01:18:12.665 NotebookApp] Notebook CV_test.ipynb is not trusted
+[I 10:15:56.950 NotebookApp] Saving file at /CV_test.ipynb
+[W 10:15:56.955 NotebookApp] Notebook CV_test.ipynb is not trusted
+[I 11:07:42.443 NotebookApp] Starting buffering for 0a21ff39-6a27-47bc-9c49-459f26984540:c021aaa85fcd4fbb95d1b8b908039958

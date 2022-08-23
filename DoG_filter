@@ -1,0 +1,14 @@
+******* Oriented Derivative of Gaussian (DoG) filter ********
+
+Convolution ----------------
+-----------
+convoluted image = Sum( H(i)F(c - i) ) where i : 0 -> N
+                        H(x) -- weighted matrix - gaussian etc
+                        F(x) -- actual image
+
+cross correlated image = Sum( H(i)F(c + i) ) where i : 0 -> N
+                        H(x) -- weighted matrix - gaussian etc
+                        F(x) -- actual image
+    difference between cross correlation and convolution is a flip sign in the function F
+    It wouldnt matter for symmetric filters but matters for asymmetric filters
+
