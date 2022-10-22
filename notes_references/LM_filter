@@ -1,0 +1,20 @@
+******* Leung-Malik filter ********
+
+|18| -- first order derivative of gaussian
+|  |    6 -- orientations
+|  |    3 -- scales
+|18| -- second order derivative of gaussian
+|  |    6 -- orientations
+|  |    3 -- scales
+|08| -- Laplacian of Gaussian(LoG) filters -- notes in LoG_filter
+|04| -- Gaussians
+-----------
+|48| Filters 
+
+* 2 versions of LM filter bank is used with different scales
+LM Small (LMS) -- scales(s_e) = 1,root(2), 2, 2*root(2)
+LM Large (LML) -- scales(s_e) = root(2), 2, 2*root(2), 4
+first and second derivative - first 3 scales with elongation factor s_e,3*(s_e)
+Gaussians - 4 basic scales(s_e)
+LoG Filters - s_e,3*(s_e)
+

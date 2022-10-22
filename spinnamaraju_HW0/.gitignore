@@ -1,0 +1,4 @@
+cnn_training/*/*/Checkpoints/
+Phase2/CIFAR10/
+Phase2/Code/data/
+data/

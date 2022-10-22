@@ -1,0 +1,779 @@
+
+%% bare_conf.tex
+%% V1.4b
+%% 2015/08/26
+%% by Michael Shell
+%% See:
+%% http://www.michaelshell.org/
+%% for current contact information.
+%%
+%% This is a skeleton file demonstrating the use of IEEEtran.cls
+%% (requires IEEEtran.cls version 1.8b or later) with an IEEE
+%% conference paper.
+%%
+%% Support sites:
+%% http://www.michaelshell.org/tex/ieeetran/
+%% http://www.ctan.org/pkg/ieeetran
+%% and
+%% http://www.ieee.org/
+
+%%*************************************************************************
+%% Legal Notice:
+%% This code is offered as-is without any warranty either expressed or
+%% implied; without even the implied warranty of MERCHANTABILITY or
+%% FITNESS FOR A PARTICULAR PURPOSE! 
+%% User assumes all risk.
+%% In no event shall the IEEE or any contributor to this code be liable for
+%% any damages or losses, including, but not limited to, incidental,
+%% consequential, or any other damages, resulting from the use or misuse
+%% of any information contained here.
+%%
+%% All comments are the opinions of their respective authors and are not
+%% necessarily endorsed by the IEEE.
+%%
+%% This work is distributed under the LaTeX Project Public License (LPPL)
+%% ( http://www.latex-project.org/ ) version 1.3, and may be freely used,
+%% distributed and modified. A copy of the LPPL, version 1.3, is included
+%% in the base LaTeX documentation of all distributions of LaTeX released
+%% 2003/12/01 or later.
+%% Retain all contribution notices and credits.
+%% ** Modified files should be clearly indicated as such, including  **
+%% ** renaming them and changing author support contact information. **
+%%*************************************************************************
+
+
+% *** Authors should verify (and, if needed, correct) their LaTeX system  ***
+% *** with the testflow diagnostic prior to trusting their LaTeX platform ***
+% *** with production work. The IEEE's font choices and paper sizes can   ***
+% *** trigger bugs that do not appear when using other class files.       ***                          ***
+% The testflow support page is at:
+% http://www.michaelshell.org/tex/testflow/
+
+
+
+\documentclass[conference]{IEEEtran}
+% Some Computer Society conferences also require the compsoc mode option,
+% but others use the standard conference format.
+%
+% If IEEEtran.cls has not been installed into the LaTeX system files,
+% manually specify the path to it like:
+% \documentclass[conference]{../sty/IEEEtran}
+
+
+
+
+
+% Some very useful LaTeX packages include:
+% (uncomment the ones you want to load)
+
+
+% *** MISC UTILITY PACKAGES ***
+%
+%\usepackage{ifpdf}
+% Heiko Oberdiek's ifpdf.sty is very useful if you need conditional
+% compilation based on whether the output is pdf or dvi.
+% usage:
+% \ifpdf
+%   % pdf code
+% \else
+%   % dvi code
+% \fi
+% The latest version of ifpdf.sty can be obtained from:
+% http://www.ctan.org/pkg/ifpdf
+% Also, note that IEEEtran.cls V1.7 and later provides a builtin
+% \ifCLASSINFOpdf conditional that works the same way.
+% When switching from latex to pdflatex and vice-versa, the compiler may
+% have to be run twice to clear warning/error messages.
+
+
+
+
+
+
+% *** CITATION PACKAGES ***
+%
+%\usepackage{cite}
+% cite.sty was written by Donald Arseneau
+% V1.6 and later of IEEEtran pre-defines the format of the cite.sty package
+% \cite{} output to follow that of the IEEE. Loading the cite package will
+% result in citation numbers being automatically sorted and properly
+% "compressed/ranged". e.g., [1], [9], [2], [7], [5], [6] without using
+% cite.sty will become [1], [2], [5]--[7], [9] using cite.sty. cite.sty's
+% \cite will automatically add leading space, if needed. Use cite.sty's
+% noadjust option (cite.sty V3.8 and later) if you want to turn this off
+% such as if a citation ever needs to be enclosed in parenthesis.
+% cite.sty is already installed on most LaTeX systems. Be sure and use
+% version 5.0 (2009-03-20) and later if using hyperref.sty.
+% The latest version can be obtained at:
+% http://www.ctan.org/pkg/cite
+% The documentation is contained in the cite.sty file itself.
+
+
+
+
+
+
+% *** GRAPHICS RELATED PACKAGES ***
+%
+\ifCLASSINFOpdf
+\usepackage[pdftex]{graphicx}
+\usepackage[font=scriptsize]{caption}
+% declare the path(s) where your graphic files are
+% \graphicspath{{../pdf/}{../jpeg/}}
+% and their extensions so you won't have to specify these with
+% every instance of \includegraphics
+% \DeclareGraphicsExtensions{.pdf,.jpeg,.png}
+\else
+% or other class option (dvipsone, dvipdf, if not using dvips). graphicx
+% will default to the driver specified in the system graphics.cfg if no
+% driver is specified.
+% \usepackage[dvips]{graphicx}
+% declare the path(s) where your graphic files are
+% \graphicspath{{../eps/}}
+% and their extensions so you won't have to specify these with
+% every instance of \includegraphics
+% \DeclareGraphicsExtensions{.eps}
+\fi
+% graphicx was written by David Carlisle and Sebastian Rahtz. It is
+% required if you want graphics, photos, etc. graphicx.sty is already
+% installed on most LaTeX systems. The latest version and documentation
+% can be obtained at: 
+% http://www.ctan.org/pkg/graphicx
+% Another good source of documentation is "Using Imported Graphics in
+% LaTeX2e" by Keith Reckdahl which can be found at:
+% http://www.ctan.org/pkg/epslatex
+%
+% latex, and pdflatex in dvi mode, support graphics in encapsulated
+% postscript (.eps) format. pdflatex in pdf mode supports graphics
+% in .pdf, .jpeg, .png and .mps (metapost) formats. Users should ensure
+% that all non-photo figures use a vector format (.eps, .pdf, .mps) and
+% not a bitmapped formats (.jpeg, .png). The IEEE frowns on bitmapped formats
+% which can result in "jaggedy"/blurry rendering of lines and letters as
+% well as large increases in file sizes.
+%
+% You can find documentation about the pdfTeX application at:
+% http://www.tug.org/applications/pdftex
+
+
+
+
+
+% *** MATH PACKAGES ***
+%
+%\usepackage{amsmath}
+% A popular package from the American Mathematical Society that provides
+% many useful and powerful commands for dealing with mathematics.
+%
+% Note that the amsmath package sets \interdisplaylinepenalty to 10000
+% thus preventing page breaks from occurring within multiline equations. Use:
+%\interdisplaylinepenalty=2500
+% after loading amsmath to restore such page breaks as IEEEtran.cls normally
+% does. amsmath.sty is already installed on most LaTeX systems. The latest
+% version and documentation can be obtained at:
+% http://www.ctan.org/pkg/amsmath
+
+
+
+
+
+% *** SPECIALIZED LIST PACKAGES ***
+%
+%\usepackage{algorithmic}
+% algorithmic.sty was written by Peter Williams and Rogerio Brito.
+% This package provides an algorithmic environment fo describing algorithms.
+% You can use the algorithmic environment in-text or within a figure
+% environment to provide for a floating algorithm. Do NOT use the algorithm
+% floating environment provided by algorithm.sty (by the same authors) or
+% algorithm2e.sty (by Christophe Fiorio) as the IEEE does not use dedicated
+% algorithm float types and packages that provide these will not provide
+% correct IEEE style captions. The latest version and documentation of
+% algorithmic.sty can be obtained at:
+% http://www.ctan.org/pkg/algorithms
+% Also of interest may be the (relatively newer and more customizable)
+% algorithmicx.sty package by Szasz Janos:
+% http://www.ctan.org/pkg/algorithmicx
+
+
+
+
+% *** ALIGNMENT PACKAGES ***
+%
+%\usepackage{array}
+% Frank Mittelbach's and David Carlisle's array.sty patches and improves
+% the standard LaTeX2e array and tabular environments to provide better
+% appearance and additional user controls. As the default LaTeX2e table
+% generation code is lacking to the point of almost being broken with
+% respect to the quality of the end results, all users are strongly
+% advised to use an enhanced (at the very least that provided by array.sty)
+% set of table tools. array.sty is already installed on most systems. The
+% latest version and documentation can be obtained at:
+% http://www.ctan.org/pkg/array
+
+
+% IEEEtran contains the IEEEeqnarray family of commands that can be used to
+% generate multiline equations as well as matrices, tables, etc., of high
+% quality.
+
+
+
+
+% *** SUBFIGURE PACKAGES ***
+\ifCLASSOPTIONcompsoc
+\usepackage[caption=false,font=normalsize,labelfont=sf,textfont=sf]{subfig}
+\else
+\usepackage[caption=false,font=footnotesize]{subfig}
+\fi
+\usepackage[export]{adjustbox}
+% subfig.sty, written by Steven Douglas Cochran, is the modern replacement
+% for subfigure.sty, the latter of which is no longer maintained and is
+% incompatible with some LaTeX packages including fixltx2e. However,
+% subfig.sty requires and automatically loads Axel Sommerfeldt's caption.sty
+% which will override IEEEtran.cls' handling of captions and this will result
+% in non-IEEE style figure/table captions. To prevent this problem, be sure
+% and invoke subfig.sty's "caption=false" package option (available since
+% subfig.sty version 1.3, 2005/06/28) as this is will preserve IEEEtran.cls
+% handling of captions.
+% Note that the Computer Society format requires a larger sans serif font
+% than the serif footnote size font used in traditional IEEE formatting
+% and thus the need to invoke different subfig.sty package options depending
+% on whether compsoc mode has been enabled.
+%
+% The latest version and documentation of subfig.sty can be obtained at:
+% http://www.ctan.org/pkg/subfig
+
+
+
+
+% *** FLOAT PACKAGES ***
+%
+%\usepackage{fixltx2e}
+% fixltx2e, the successor to the earlier fix2col.sty, was written by
+% Frank Mittelbach and David Carlisle. This package corrects a few problems
+% in the LaTeX2e kernel, the most notable of which is that in current
+% LaTeX2e releases, the ordering of single and double column floats is not
+% guaranteed to be preserved. Thus, an unpatched LaTeX2e can allow a
+% single column figure to be placed prior to an earlier double column
+% figure.
+% Be aware that LaTeX2e kernels dated 2015 and later have fixltx2e.sty's
+% corrections already built into the system in which case a warning will
+% be issued if an attempt is made to load fixltx2e.sty as it is no longer
+% needed.
+% The latest version and documentation can be found at:
+% http://www.ctan.org/pkg/fixltx2e
+
+
+%\usepackage{stfloats}
+% stfloats.sty was written by Sigitas Tolusis. This package gives LaTeX2e
+% the ability to do double column floats at the bottom of the page as well
+% as the top. (e.g., "\begin{figure*}[!b]" is not normally possible in
+	% LaTeX2e). It also provides a command:
+	%\fnbelowfloat
+	% to enable the placement of footnotes below bottom floats (the standard
+	% LaTeX2e kernel puts them above bottom floats). This is an invasive package
+	% which rewrites many portions of the LaTeX2e float routines. It may not work
+	% with other packages that modify the LaTeX2e float routines. The latest
+	% version and documentation can be obtained at:
+	% http://www.ctan.org/pkg/stfloats
+	% Do not use the stfloats baselinefloat ability as the IEEE does not allow
+	% \baselineskip to stretch. Authors submitting work to the IEEE should note
+	% that the IEEE rarely uses double column equations and that authors should try
+	% to avoid such use. Do not be tempted to use the cuted.sty or midfloat.sty
+	% packages (also by Sigitas Tolusis) as the IEEE does not format its papers in
+	% such ways.
+	% Do not attempt to use stfloats with fixltx2e as they are incompatible.
+	% Instead, use Morten Hogholm'a dblfloatfix which combines the features
+	% of both fixltx2e and stfloats:
+	%
+	% \usepackage{dblfloatfix}
+	% The latest version can be found at:
+	% http://www.ctan.org/pkg/dblfloatfix
+	
+	
+	
+	
+	% *** PDF, URL AND HYPERLINK PACKAGES ***
+	%
+	%\usepackage{url}
+	% url.sty was written by Donald Arseneau. It provides better support for
+	% handling and breaking URLs. url.sty is already installed on most LaTeX
+	% systems. The latest version and documentation can be obtained at:
+	% http://www.ctan.org/pkg/url
+	% Basically, \url{my_url_here}.
+	
+	
+	
+	
+	% *** Do not adjust lengths that control margins, column widths, etc. ***
+	% *** Do not use packages that alter fonts (such as pslatex).         ***
+	% There should be no need to do such things with IEEEtran.cls V1.6 and later.
+	% (Unless specifically asked to do so by the journal or conference you plan
+	% to submit to, of course. )
+	
+	
+	% correct bad hyphenation here
+	\hyphenation{op-tical net-works semi-conduc-tor}
+	
+	
+	\begin{document}
+		%
+		% paper title
+		% Titles are generally capitalized except for words such as a, an, and, as,
+		% at, but, by, for, in, nor, of, on, or, the, to and up, which are usually
+		% not capitalized unless they are the first or last word of the title.
+		% Linebreaks \\ can be used within to get better formatting as desired.
+		% Do not put math or special symbols in the title.
+		\title{Homework0: Alohomora}
+		
+		
+		% author names and affiliations
+		% use a multiple column layout for up to three different
+		% affiliations
+		\author{
+			\IEEEauthorblockN{P Sai Ramana Kiran}
+			\IEEEauthorblockA{Email: spinnamaraju@wpi.edu \\ Using 1 late day}
+		}
+		
+		% conference papers do not typically use \thanks and this command
+		% is locked out in conference mode. If really needed, such as for
+		% the acknowledgment of grants, issue a \IEEEoverridecommandlockouts
+		% after \documentclass
+		
+		% for over three affiliations, or if they all won't fit within the width
+		% of the page, use this alternative format:
+		% 
+		% \author{\IEEEauthorblockN{Michael Shell\IEEEauthorrefmark{1},
+				% Homer Simpson\IEEEauthorrefmark{2},
+				% James Kirk\IEEEauthorrefmark{3}, 
+				% Montgomery Scott\IEEEauthorrefmark{3} and
+				% Eldon Tyrell\IEEEauthorrefmark{4}}
+			% \IEEEauthorblockA{\IEEEauthorrefmark{1}School of Electrical and Computer Engineering\\
+				% Georgia Institute of Technology,
+				% Atlanta, Georgia 30332--0250\\ Email: see http://www.michaelshell.org/contact.html}
+			% \IEEEauthorblockA{\IEEEauthorrefmark{2}Twentieth Century Fox, Springfield, USA\\
+				% Email: homer@thesimpsons.com}
+			% \IEEEauthorblockA{\IEEEauthorrefmark{3}Starfleet Academy, San Francisco, California 96678-2391\\
+				% Telephone: (800) 555--1212, Fax: (888) 555--1212}
+			% \IEEEauthorblockA{\IEEEauthorrefmark{4}Tyrell Inc., 123 Replicant Street, Los Angeles, California 90210--4321}}
+		
+		
+		
+		
+		% use for special paper notices
+		%\IEEEspecialpapernotice{(Invited Paper)}
+		
+		
+		
+		
+		% make the title area
+		\maketitle
+		
+		\begin{abstract}
+			This report documents the results for Phase I: classical techniques for edge detection and Phase II: modern techniques for object classification. Phase I part of the assignment explores generation of variety of filter kernels using mathematical equations and related techniques. These kernels are further used to abstract the edges of an image. Phase II part of the assignment explores using deep Convolution Neural Networks (CNNs) in object classification problem. Different models are implemented and a detailed analysis is presented 
+		\end{abstract}
+		
+		
+		
+		
+		
+		
+		
+		\section{Shake My Boundary}
+		This part of the assignment explores classical methods for edge detection. It implements a ``lite'' version of probability of boundary detection algorithm
+
+		
+		
+		\subsection{Generating Filter Banks}
+		One of the major challenge in Phase I part of the assignment was to generate 2D skewed gaussians $P(x,y)$ and their derivatives $P'(x,y)$, $P''(x,y)$ centered at 0 mean $\mu$ and varying variance $\sigma$. This was achieved by assuming that distributions of gaussian along each dimension is independent of each other as denoted in \ref{independent_probabilities}
+		\begin{equation}
+			\label{independent_probabilities}
+			P(x,y) = P(x)P(y)
+		\end{equation}
+		\begin{equation}
+			\label{gaussian_distribution}
+			P(t) = \frac{1}{\sigma\sqrt{2\pi}}e^{-\frac{1}{2}\left(\frac{t-\mu}{\sigma}\right)^2} 
+		\end{equation}
+		Using this assumption, their $n$th partial derivatives can be easily computed as shown in \ref{derived_gaussian_x} and \ref{derived_gaussian_y}
+		\begin{eqnarray}
+			\label{derived_gaussian_x}
+			P_x^n(x,y) = P_x^n(x)P(y)\\
+			\label{derived_gaussian_y}
+			P_y^n(x,y) = P(x)P_y^n(y)
+		\end{eqnarray}
+		
+		Moreover, to get probability distribution of a gaussian rotated by an angle of $\theta$ is achieved using rotation transformation as denoted in \ref{rotated_gaussian}
+		\begin{equation}
+			\label{rotated_gaussian}
+			P(x_r,y_r) = P(xcos\theta + ysin\theta)P(ycos\theta - xsin\theta)
+		\end{equation}
+		
+		Combining above equations will simplify the job of generating gaussians of different variances ($\sigma_x$ and $\sigma_y$) at different rotation ($\theta$).  A sample set of gaussians and it's derivatives are shown in \ref{fig:Gaussians}
+		
+		\begin{figure}[!t]
+			\centering
+			\captionsetup{justification=centering}
+			\includegraphics[width=0.5\textwidth]{filter_banks/gaussians.png}
+			\caption{\label{fig:Gaussians}1st and 2nd derivative gaussians and rotated gaussians}
+		\end{figure}
+	
+		Now that a fundamental component of gaussians is created, following filter banks which are combinations of orientations and gaussian derivatives are generated.
+
+		\vspace{0.2cm}
+		\subsubsection{Oriented Derivative Of Gaussians}
+		As described in the problem statement, these filters are generated by convolving sobel kernels with gaussians of different sizes and rotating them. Filterbanks with 2 scales and 12 orientations is shown in figure \ref{fig:DoG}
+		\begin{figure}[]
+			\centering
+			\includegraphics[width=0.5\textwidth,trim={0cm 3cm 0cm 3cm}]{filter_banks/DoG.png}
+			\caption{Oriented Derivative of Gaussian}
+			\label{fig:DoG}
+		\end{figure}
+		\subsubsection{Leung-Malik Filters}
+		Using the concepts mentioned above, generating Leung-Malik filters are straightforward. Figure \ref{fig:LM} shows 96 LM filters, combining LM Small and LM Large filters
+		\vspace{0.2cm}
+		\begin{figure}[t]
+			\centering
+			\includegraphics[width=0.5\textwidth]{filter_banks/LM.png}
+			\caption{Leung Malik Filters}
+			\label{fig:LM}
+		\end{figure}
+		\subsubsection{Gabor Filters}
+		These filters which are approximated versions of how human visual system is generated with 4 scales and 7 orientations. Idea was to cover as many orientations and scales as possible while keeping computational feasibility in mind. Figure \ref{fig:Gabor} show different gabor filters used 
+		\begin{figure}
+			\centering
+			\includegraphics[width=0.5\textwidth]{filter_banks/Gabor.png}
+			\caption{Gabor Filters}
+			\label{fig:Gabor}
+		\end{figure}
+		\subsection{Clustering Feature maps}
+		Now, we use the $N$ filters generated in the above filter banks to convolve image of interest, which results in a series of $N$ convoluted images representing various texture patterns. Along with these texture patterns, brightness and color images are clustered to create a texton map, brightness cluster, color cluster 
+		\vspace{0.2cm}
+		\subsubsection{Texton Map $\tau$}
+		Again, as mentioned in the problem statement, Texton maps $\tau$ are generated by applying $K$ - means clustering on the filtered maps. $80$ bins were used in the clustering and right most image in figures \ref{subfig:image1} to \ref{subfig:image10} show different texton maps  
+		\vspace{0.2cm}
+		\subsubsection{Brightness Map $B$}
+		$B$ is created with similar methodology as $\tau$ map, except $16$ bins were used instead of $80$ bins. Left image in figures \ref{subfig:image1} to \ref{subfig:image10} represents results of various images with $16$ bins
+		\vspace{0.2cm}
+		\subsubsection{Color Map $C$}
+		Center images in figures \ref{subfig:image1} to \ref{subfig:image10} represents results of various color maps. Clustering was done using 3 channels as feature maps and $16$ bins
+%		
+		\begin{figure}[t]
+			\centering
+			\captionsetup{justification=centering,margin=2cm}
+			\subfloat[image 1]{
+				\includegraphics[width=0.5\textwidth,trim={1 3.9cm 1 3.9cm},valign=t]{clustered/Clustered_1.png}
+				\label{subfig:image1}}
+			\vfil
+			\subfloat[image 2]{
+				\includegraphics[width=0.5\textwidth,trim={1 3.9cm 1 3.9cm},valign=t]{clustered/Clustered_2.png}
+				\label{subfig:image2}}
+			
+			\subfloat[image 3]{
+				\includegraphics[width=0.5\textwidth,trim={1 3.9cm 1 3.9cm},clip,valign=t]{clustered/Clustered_3.png}
+				\label{subfig:image3}}
+			
+			\subfloat[image 4]{
+				\includegraphics[width=0.5\textwidth,trim={1 3.9cm 1 3.9cm},clip,valign=t]{clustered/Clustered_4.png}
+				\label{subfig:image4}}
+			
+			\subfloat[image 5]{
+				\includegraphics[width=0.5\textwidth,trim={1 3.9cm 1 3.9cm},clip,valign=t]{clustered/Clustered_5.png}
+				\label{subfig:image5}}
+			\caption{Clustered (left to right) Brightness, Color and Texton maps of images 1 to 5}
+			\label{fig:clustered maps 1 to 5}
+		\end{figure}
+		\begin{figure}
+			\centering
+			\captionsetup{justification=centering,margin=2cm}
+			\subfloat[image 6]{
+				\includegraphics[width=0.5\textwidth,trim={1 3.9cm 1 3.9cm},valign=t]{clustered/Clustered_6.png}
+				\label{subfig:image6}}
+			
+			\subfloat[image 7]{
+				\includegraphics[width=0.5\textwidth,trim={1 3.9cm 1 3.9cm},valign=t]{clustered/Clustered_7.png}
+				\label{subfig:image7}}
+			
+			\subfloat[image 8]{
+				\includegraphics[width=0.5\textwidth,trim={1 3.9cm 1 3.9cm},valign=t]{clustered/Clustered_8.png}
+				\label{subfig:image8}}
+			
+			\subfloat[image 9]{
+				\includegraphics[width=0.5\textwidth,trim={1 3.9cm 1 3.9cm},valign=t]{clustered/Clustered_9.png}
+				\label{subfig:image9}}
+			
+			\subfloat[image 10]{
+				\includegraphics[width=0.5\textwidth,trim={1 2.5cm 1 2.5cm},valign=t]{clustered/Clustered_10.png}
+				\label{subfig:image10}}
+			
+			\caption{Clustered (left to right) Brightness, Color and Texton maps of images 6 to 10}
+			\label{fig:clustered maps 6 to 10}
+		\end{figure}
+
+		\subsection{Calculating Gradients}
+		Gradients of different clustered feature maps was calculated using half disk mask pairs and filtering operation on feature matrices. Essentially, histograms of feature maps was calculated using half disk masks and a $\chi^2$ distance is computed for each pair. So if we have $N$ pairs of half disk masks, we would end up with $N$ feature maps containing $\chi^2$ distances at each pixel
+		We use half disk masks to calculate gradients along these textured images
+		\subsubsection{Half disk images}
+		Half disk mask pairs with 3 scales ($10,20,30$) and 7 orientations ranging from $0^{\circ}$ to $145^{\circ}$ are shown in \ref{fig:half disk masks}
+
+		\begin{figure}
+			\centering
+			\captionsetup{justification=centering}
+			\includegraphics[width=0.5\textwidth]{filter_banks/HDMasks.png}
+			\caption{Half Disk Masks}
+			\label{fig:half disk masks}
+		\end{figure}
+		\subsubsection{Gradients Brightness ($B_g$), Color ($C_g$), Texture ($\tau_g$)}
+		Now, the $21$ half disks masks generated is used to compute gradient of the brightness, color and Texton map. Results of which are shown in the figures \ref{subfig:grad_image1} to \ref{subfig:grad_image10}
+		\begin{figure}
+			\centering
+			\captionsetup{justification=centering,margin=2cm}
+			\subfloat[image 1]{
+				\includegraphics[width=0.5\textwidth,trim={1 3.9cm 1 3.9cm},valign=t]{gradients/Gradients_1.png}
+				\label{subfig:grad_image1}}
+			\vfil
+			\subfloat[image 2]{
+				\includegraphics[width=0.5\textwidth,trim={1 3.9cm 1 3.9cm},valign=t]{gradients/Gradients_2.png}
+				\label{subfig:grad_image2}}
+			
+			\subfloat[image 3]{
+				\includegraphics[width=0.5\textwidth,trim={1 3.9cm 1 3.9cm},valign=t]{gradients/Gradients_3.png}
+				\label{subfig:grad_image3}}
+			
+			\subfloat[image 4]{
+				\includegraphics[width=0.5\textwidth,trim={1 3.9cm 1 3.9cm},valign=t]{gradients/Gradients_4.png}
+				\label{subfig:grad_image4}}
+			
+			\subfloat[image 5]{
+				\includegraphics[width=0.5\textwidth,trim={1 3.9cm 1 3.9cm},valign=t]{gradients/Gradients_5.png}
+				\label{subfig:grad_image5}}
+			\caption{Gradients of (left to right) Brightness, Color and Texton maps of images 1 to 5}
+			\label{fig:gradient maps 1 to 5}
+		\end{figure}
+		\begin{figure}
+			\centering
+			\captionsetup{justification=centering,margin=2cm}
+			\subfloat[image 6]{
+				\includegraphics[width=0.5\textwidth,trim={1 3.9cm 1 3.9cm},valign=t]{gradients/Gradients_6.png}
+				\label{subfig:grad_image6}}
+			
+			\subfloat[image 7]{
+				\includegraphics[width=0.5\textwidth,trim={1 3.9cm 1 3.9cm},valign=t]{gradients/Gradients_7.png}
+				\label{subfig:grad_image7}}
+			
+			\subfloat[image 8]{
+				\includegraphics[width=0.5\textwidth,trim={1 3.9cm 1 3.9cm},valign=t]{gradients/Gradients_8.png}
+				\label{subfig:grad_image8}}
+			
+			\subfloat[image 9]{
+				\includegraphics[width=0.5\textwidth,trim={1 3.9cm 1 3.9cm},valign=t]{gradients/Gradients_9.png}
+				\label{subfig:grad_image9}}
+			
+			\subfloat[image 10]{
+				\includegraphics[width=0.5\textwidth,trim={1 2.5cm 1 2.5cm},valign=t]{gradients/Gradients_10.png}
+				\label{subfig:grad_image10}}
+			
+			\caption{Gradients of (left to right) Brightness, Color and Texton maps of images 6 to 10}
+			\label{fig:gradient maps 6 to 10}
+		\end{figure}
+		\subsection{Pb-Lite Output and analysis}
+		Combining above derived gradient maps along with Canny and Sobel baseline images gives the edges.  as shown in \ref{fig:pbedges}.
+		PbLite baseline clearly outperformed in many images and identified the boundaries successfully. For example, a comparison of pblite, sobel and canny can be seen in figure \ref{fig:compare_1_edges}. PbLite in this case has accurately identified the aircraft alone, leaving the clouds unlike canny baseline. On the otherhand, sobel couldnt identify some aspects of the aircraft. However, there are few instances like figure \ref{fig:compare_8_edges} where pblite couldnt identify complete aspects of the animal.
+		
+		That being said, most of the edge detection from pblite output is attributed to the canny and sobel baselines since Hadamard product is nullifying the pixels using 0s of canny and sobel baseline images. To make PbLite more standalone, more finer number of Gabor filters have to be used. All these filters have to be carefully selected since too many convolutions might create a noisy feature maps. 
+		\begin{figure}
+			\centering
+			\captionsetup{justification=centering,margin=2cm}
+			\includegraphics[width=0.5\textwidth,trim={1cm 0cm 1cm 2cm}]{pbEdges.png}
+			\caption{Probability Lite Edge detection output}
+			\label{fig:pbedges}
+		\end{figure}
+
+		\begin{figure}
+			\centering
+			\captionsetup{justification=centering,margin=2cm}
+			\includegraphics[width=0.4\textwidth,trim={1cm 0cm 1cm 2cm}]{phase_1_compare/1.png}
+			\caption{Comparing pbLite, Sobel and Canny edges for image 1}
+			\label{fig:compare_1_edges}
+		\end{figure}
+	
+		\begin{figure}
+			\centering
+			\captionsetup{justification=centering,margin=2cm}
+			\includegraphics[width=0.4\textwidth,trim={1cm 0cm 1cm 2cm}]{phase_1_compare/8.png}
+			\caption{Comparing pbLite, Sobel and Canny edges for image 8}
+			\label{fig:compare_8_edges}
+		\end{figure}
+		
+		
+		\section{Deep Dive on Deep Learning}
+		In this part of homework, modern techniques for image classification using Deep Convolutional Networks have been implemented.
+		\subsection{Base Model and Implementation details}
+		As a baseline model, an architecture inspired from VGG is implemented. Wherein, the number of convolution filters double ($ \times 2$) as the network goes deep. Simultaneously, to capture more finer features of the images, the size of activation maps are halved (/2) using a Max pooling of size $2 \times 2$ in between the convolution filters. Each convolution filter is also passed to Rectified Linear Unit (ReLU). At the end the convolutions, a number of finer activation maps is flattened and fully connected to a linear layer. This in-turn is mapped to the classification layer. Architecture of the model is shown in figure \ref{fig:base_line_model}.
+		All the hyper-parameters and training results can be seen in figure \ref{fig:hyper_params_allmodels}. Comparison of training and testing accuracy over epochs can be found in figure \ref{fig:base_line_accuracy_compare}, loss can be found in \ref{fig:base_line_loss_compare}
+	
+		\begin{figure}
+			\centering
+			\includegraphics[width=0.1\textwidth,scale=0.3]{models/base_line.png}
+			\caption{Baseline model architecture}
+			\label{fig:base_line_model}
+		\end{figure}
+
+		\begin{figure}
+			\centering
+			\includegraphics[width=0.4\textwidth]{CM/base_model.png}
+			\caption{Baseline confusion matrix}
+			\label{fig:base_line_model_cm}
+		\end{figure}
+%	
+%		
+		\subsection{Improvements to Baseline Model}
+		Few hyper parameters for improving the model prediction accuracy have been explored. Modified architecture can be seen in figure \ref{fig:batch_norm_model}. Hyper-parameters and training results are summarized in the figure  \ref{fig:hyper_params_allmodels}. Clearly with the following improvements, accuracy of the network improved by almost $10\%$!
+		
+		\begin{figure}
+			\centering
+			\includegraphics[width=0.25\textwidth]{models/batchnorm.png}
+			\caption{Improved baseline model with batch normalization}
+			\label{fig:batch_norm_model}
+		\end{figure}
+	
+	
+		\begin{figure}
+			\centering
+			\includegraphics[width=0.4\textwidth]{CM/batch_norm.png}
+			\caption{Improved Baseline confusion matrix}
+			\label{fig:base_line_model}
+		\end{figure}
+		
+		\subsubsection{learning rate decay}
+		2 variations, linear decay and step decay of the learning rate has been tried. However, both the decay algorithms didnt improve the base line model accuracy as shown in figure \ref{fig:base_line_accuracy_compare} with `Learn Decay Model Accuracy' and `Learn Decay Model Validation Accuracy' plots
+		\subsubsection{Data Augmentation}
+		Image data has been standardized at the beginning of the training (and testing) to a specific mean and variance. By standardizing the per pixel information, we are essentially making sure that weights are not chasing a moving target. Moreover, the images are resized to $64 \times 64$ from $32 \times 32$. Accordingly, the network parameters are changed to reflect the new image sizes
+		\subsubsection{Batch normalization}
+		Along with data augmentation, a batch normalization layer has been added in between convolutions. This also makes sure that layers are getting standardized inputs and weights dont move around too much from target. Both of these techniques have significantly improved the performance of the baseline model as can be seen in figure  \ref{fig:base_line_accuracy_compare} with `Batch Norm Model Accuracy' and `Batch Norm Validation Accuracy' plots
+%		
+		\begin{figure}
+			\centering
+			\includegraphics[width=0.4\textwidth]{compare_graphs/baseline_model_accuracy_compare.png}
+			\caption{Accuracy over different models}
+			\label{fig:base_line_accuracy_compare}
+		\end{figure}
+%	
+		\begin{figure}
+			\centering
+			\includegraphics[width=0.4\textwidth]{compare_graphs/baseline_model_loss_compare.png}
+			\caption{Loss comparison over different models}
+			\label{fig:base_line_loss_compare}
+		\end{figure}
+	
+		\begin{figure*}[!h]
+		\centering
+		\includegraphics[width=\textwidth]{hyperparams/allmodels.png}
+		\caption{\label{fig:hyper_params_allmodels}Comparison of models}
+		\end{figure*}
+	
+		\subsection{ResNet,ResNeXt,DenseNet}
+		A custom implementations of the architectures ResNet and ResNeXt are explored in this part of homework.
+		\subsubsection{ResNet}
+		In this variation of ResNet implementation, images are first resized from $32 \times 32$ to $64 \times 64$, similar to the previously improved baseline model. From here, the input is directly fed to the `ResNetBlock' instead of first feeding to the convolution layer. This is because the first convolution layer was primarily used for downsampling the image and in this case images are small enough for them to act as input. Figure \ref{fig:resnet_block} is a screenshot from tensorboard, which reflects the `ResNetBlock' implementation. Custom architecture is outlined in figure \ref{fig:resnet_architecture}
+	
+		\begin{figure}
+			\centering
+			\includegraphics[width=0.4\textwidth]{models/ResNetBlock.png}
+			\caption{ResNetBlock}
+			\label{fig:resnet_block}
+		\end{figure}
+		
+		\begin{figure}
+			\centering
+			\includegraphics[width=0.1\textwidth]{models/ResNetModel.png}
+			\caption{ResNet Architecture implementation}
+			\label{fig:resnet_architecture}	
+		\end{figure}
+
+	
+		\begin{figure}
+			\centering
+			\includegraphics[width=0.4\textwidth]{compare_graphs/resnet_accuracy_compare.png}
+			\caption{Accuracy comparison of ResNet andResNeXt}
+			\label{fig:resnet_accuracy_compare}
+		\end{figure}
+	
+		\begin{figure}
+			\centering
+			\includegraphics[width=0.4\textwidth]{compare_graphs/resnet_loss_compare.png}
+			\caption{Loss comparison of ResNet,ResNeXt}
+			\label{fig:resnet_loss_compare}
+		\end{figure}
+	
+	
+		Other hyper parameters and results are outlined in the figure \ref{fig:hyper_params_allmodels}. Along with the confusion matrix for test and training accuracy is given in figure \ref{fig:resnet_cm}. Training and testing accuracy per epoch can be found in \ref{fig:resnet_accuracy_compare} Clearly, this network outperforms the baseline model and it's variation by a considerable margin, despite being less number of training parameters. However, this comes at a cost of inference run time, where baseline model easily wins.
+				
+	
+		
+
+		\begin{figure}
+			\centering
+			\includegraphics[width=0.4\textwidth]{CM/resnet.png}
+			\caption{ResNet Confusion Matrix}
+			\label{fig:resnet_cm}
+		\end{figure}
+	
+
+	
+		\subsubsection{ResNeXt}
+		This variation follows very similar design pattern from above, wherenin the first layer is the `ResNeXt' block. This model uses the same input as above, where images are of size $64 \times 64$. Summary of architecture is outlined in figure \ref{fig:resnext_architecture}. All the hyper parameters and results can be captured from the figure \ref{fig:hyper_params_allmodels}. From this figure, it can be inferred that despite the architecture having less number of the trainable parameters, it couldnt achieve the training and testing accuracy as good as custom ResNet implementation. This might be attributed to the lack of sufficient number of cardinal layers as indicated in the ResNeXt paper
+		
+		\begin{figure}
+			\centering
+			\includegraphics[width=0.4\textwidth]{models/ResNeXt.png}
+			\caption{ResNeXtBlock}
+			\label{fig:resnext_block}
+		\end{figure}
+		
+		\begin{figure}
+			\centering
+			\includegraphics[width=0.1\textwidth]{models/ResNeXtModel.png}
+			\caption{ResNeXt Architecture implementation}
+			\label{fig:resnext_architecture}
+		\end{figure}
+		
+		\begin{figure}
+			\centering
+			\includegraphics[width=0.4\textwidth]{CM/resnext.png}
+			\caption{ResNeXt Confusion Matrix}
+			\label{fig:resnext_cm}
+		\end{figure}
+	
+	
+		\subsubsection{DenseNet}
+		This variation connects every `DenseNetBlock' with downstream blocks. However, unlike previous networks, it is not adding to the input but instead concatenating to the channel dimension. Thereby increasing the input channels as the number of blocks within the network go deep. These `DenseNetBlock's together form a `DenseNetLayer' as shown in figure \ref{fig:densenet_layer}. Architecture can be seen in the figure \ref{fig:dense_net_architecture}. There were multiple attempts at improving the densenet layer by modifying the image sizes, increasing the growth factor, also increasing the depth of a particular DenseNetLayer. However, not only the amount of time it took to train was massive, but training and testing results were not optimal. For example, in the initial attempt, it was trained with 4 layers of depth $[6,12,24,8]$, with epochs as 100. Even with these parameters, network still gave a testing accuracy $<10\%$. In subsequent runs, a modified and simplified layer have been tried with weights initialized using `Kaiming Normal' Model. Even with this initialization, training couldnt be completed in time and results were suboptimal. 
+		
+		\subsubsection{Phase II concluding remarks}
+		Overall, the ResNet and improved baseline models worked really well. Still need to explore and tune many hyperparameters, optimizers and different layers to identify best combination to predict images from CIFAR-10. A better weight initialization for ResNeXt and DenseNet based off ImageNet models is very much desired. More methods to improve the inference time needs to explored since 4ms for a good prediction is not sustainable in high speed and latency sensitive environments
+		
+		\begin{figure}
+			\centering
+			\includegraphics[width=0.4\textwidth]{CM/densenet.png}
+			\caption{DenseNet Confusion Matrix}
+			\label{fig:densenet_cm}
+		\end{figure}
+	
+		\begin{figure}
+			\centering
+			\includegraphics[width=0.1\textwidth]{models/DenseNetLayer.png}
+			\caption{DenseNet Block and Layer}
+			\label{fig:densenet_layer}
+		\end{figure}
+	
+		\begin{figure}
+			\centering
+			\includegraphics[width=0.1\textwidth]{models/DenseNetModel.png}
+			\caption{DenseNet Block and Layer}
+			\label{fig:dense_net_architecture}
+		\end{figure}
+
+
+		
+		
+		% that's all folks
+	\end{document}
+	
+	

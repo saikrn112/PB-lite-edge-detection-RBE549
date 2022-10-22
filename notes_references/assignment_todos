@@ -1,0 +1,12 @@
+[]play around with scaling factors
+    [] dog_scaling_factor
+    [] LM_scaling factor
+    [] gabor_scaling_factor
+[] generate a cyclical gabor filters
+[] uncomment the gabor filters
+[] need to document the parameters like
+    [] what all scales,kernel_sizes,orientations am I using for 
+        [] half disk masks
+        [] dog filter
+        [] LM filter
+        [] gabor filter
