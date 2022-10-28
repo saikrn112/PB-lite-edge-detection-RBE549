@@ -140,7 +140,7 @@ def ConfusionMatrix(LabelsTrue, LabelsPred):
 
     print('Accuracy: '+ str(Accuracy(LabelsPred, LabelsTrue)), '%')
 
-model_type = CIFAR10Model.Model.Base
+model_type = CIFAR10Model.Model.ResNet
 if model_type == CIFAR10Model.Model.Base:
     model_path = "base_model"
 elif model_type == CIFAR10Model.Model.BatchNorm:
@@ -153,20 +153,20 @@ elif model_type == CIFAR10Model.Model.DenseNet:
     model_path = "densenet"
 base_path = "./"
 ModelPath = base_path + "/checkpoints/"+ model_path +"/model.ckpt"
-LabelsPath = "./TxtFiles/LabelsTrain.txt"
+LabelsPath = "./Code/TxtFiles/LabelsTest.txt"
 
 normalize = torchvision.transforms.Normalize(mean=[0.4914, 0.4822, 0.4465],std=[0.2023, 0.1994, 0.2010])
-# transforms_to_apply = transforms.Compose([transforms.Resize((64,64)), transforms.ToTensor(), normalize])
-transforms_to_apply = transforms.Compose([transforms.ToTensor(),normalize])
+transforms_to_apply = transforms.Compose([transforms.Resize((64,64)), transforms.ToTensor(), normalize])
+#transforms_to_apply = transforms.Compose([transforms.ToTensor(),normalize])
 
-TestSet = CIFAR10(root='./data/', train=True,transform=transforms_to_apply)
+TestSet = CIFAR10(root='./data/', train=False,transform=transforms_to_apply)
 
 
 # Setup all needed parameters including file reading
 ImageSize = SetupAll()
 
 # Define PlaceHolder variables for Input and Predicted output
-LabelsPathPred = './TxtFiles/PredOut.txt' # Path to save predicted labels
+LabelsPathPred = './Code/TxtFiles/PredOut.txt' # Path to save predicted labels
 
 TestOperation(model_type, ImageSize, ModelPath, TestSet, LabelsPathPred)
 
