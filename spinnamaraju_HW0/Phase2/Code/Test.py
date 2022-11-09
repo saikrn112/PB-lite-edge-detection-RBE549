@@ -156,8 +156,8 @@ ModelPath = base_path + "/checkpoints/"+ model_path +"/model.ckpt"
 LabelsPath = "./Code/TxtFiles/LabelsTest.txt"
 
 normalize = torchvision.transforms.Normalize(mean=[0.4914, 0.4822, 0.4465],std=[0.2023, 0.1994, 0.2010])
-transforms_to_apply = transforms.Compose([transforms.Resize((64,64)), transforms.ToTensor(), normalize])
-#transforms_to_apply = transforms.Compose([transforms.ToTensor(),normalize])
+#transforms_to_apply = transforms.Compose([transforms.Resize((64,64)), transforms.ToTensor(), normalize])
+transforms_to_apply = transforms.Compose([transforms.ToTensor(),normalize])
 
 TestSet = CIFAR10(root='./data/', train=False,transform=transforms_to_apply)
 

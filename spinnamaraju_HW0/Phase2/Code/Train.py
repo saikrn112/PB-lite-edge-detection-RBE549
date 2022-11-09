@@ -236,11 +236,9 @@ normalize = torchvision.transforms.Normalize(mean=[0.4914, 0.4822, 0.4465],std=[
 
 # transforms_to_apply = transforms.Compose([transforms.Resize((64,64)),transforms.ToTensor(),normalize])
 transforms_to_apply = transforms.Compose([transforms.ToTensor(), normalize])
-TrainSet = torchvision.datasets.CIFAR10(root='../../data', train=True,
-                                        download=True, transform=transforms_to_apply)
+TrainSet = torchvision.datasets.CIFAR10(root='../data', train=True, download=True, transform=transforms_to_apply)
 
-ValSet = torchvision.datasets.CIFAR10(root='../../data', train=True,
-                                        download=True, transform=transforms_to_apply)
+ValSet = torchvision.datasets.CIFAR10(root='../data', train=True, download=True, transform=transforms_to_apply)
 
 valid_size = 0.1
 num_train = len(TrainSet)
@@ -255,8 +253,8 @@ train_idx, valid_idx = indices[split:], indices[:split]
 
 DivTrain = 1.0
 MiniBatchSize = 128
-LoadCheckPoint = 1
-model_type = CIFAR10Model.Model.Base
+LoadCheckPoint = 0
+model_type = CIFAR10Model.Model.ResNet
 if model_type == CIFAR10Model.Model.Base:
     model_path = "base_model"
 elif model_type == CIFAR10Model.Model.BatchNorm:

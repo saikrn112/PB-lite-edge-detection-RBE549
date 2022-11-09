@@ -6,7 +6,7 @@ TFLITE_PATH="./resnet.tflite"
 def representative_dataset_gen():
     for _ in range(10):
         # Get sample input data as a numpy array in a method of your choosing.
-        input = np.float32(2.*(np.random.rand(16, 3, 64, 64) - 0.5))
+        input = np.float32(2.*(np.random.rand(1, 3, 64, 64) - 0.5))
         yield [input]
 
 converter = tf.lite.TFLiteConverter.from_saved_model(TF_PATH)
